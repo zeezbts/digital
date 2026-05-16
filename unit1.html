@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic Gates Overview</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            max-width: 700px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        h2 {
+            color: #1a202c;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        p {
+            font-style: italic;
+            color: #4a5568;
+            margin-bottom: 15px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 3px solid #4a5568;
+        }
+        strong {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <h1><b>LOGIC GATES</b>
+    </h1>
+
+    <h2>1. Basic Gates</h2>
+    <p>Basic gates form the core foundation of all digital systems.</p>
+    <ul>
+        <li><strong>AND Gate:</strong> Outputs 1 only when all inputs are 1. It acts as logical multiplication.</li>
+        <li><strong>OR Gate:</strong> Outputs 1 when at least one input is 1. It acts as logical addition.</li>
+        <li><strong>NOT Gate:</strong> Inverts the input signal completely. A 1 becomes 0, and a 0 becomes 1.</li>
+    </ul>
+
+    <h2>2. Universal Gates</h2>
+    <p>Universal gates can mimic any other logic gate configuration on their own.</p>
+    <ul>
+        <li><strong>NAND Gate:</strong> An AND gate followed by a NOT gate. Outputs 0 only when all inputs are 1.</li>
+        <li><strong>NOR Gate:</strong> An OR gate followed by a NOT gate. Outputs 1 only when all inputs are 0.</li>
+    </ul>
+
+    <h2>3. Derived Gates</h2>
+    <p>Derived gates are complex combinations of basic gates used for arithmetic operations.</p>
+    <ul>
+        <li><strong>XOR (Exclusive-OR) Gate:</strong> Outputs 1 only when inputs are different from each other.</li>
+        <li><strong>XNOR (Exclusive-NOR) Gate:</strong> Outputs 1 only when inputs are identical to each other.</li>
+    </ul>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic Gates Truth Tables</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        h2 {
+            color: #1a202c;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 5px;
+            margin-top: 40px;
+        }
+        h3 {
+            color: #4a5568;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #cbd5e0;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f7fafc;
+            font-weight: 600;
+        }
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        .out-col {
+            background-color: #edf2f7;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>1. Basic Gates Truth Tables</h2>
+    <div class="grid">
+        <div>
+            <h3>AND Gate</h3>
+            <table>
+                <tr><th>A</th><th>B</th><th class="out-col">Y</th></tr>
+                <tr><td>0</td><td>0</td><td class="out-col">0</td></tr>
+                <tr><td>0</td><td>1</td><td class="out-col">0</td></tr>
+                <tr><td>1</td><td>0</td><td class="out-col">0</td></tr>
+                <tr><td>1</td><td>1</td><td class="out-col">1</td></tr>
+            </table>
+        </div>
+        <div>
+            <h3>OR Gate</h3>
+            <table>
+                <tr><th>A</th><th>B</th><th class="out-col">Y</th></tr>
+                <tr><td>0</td><td>0</td><td class="out-col">0</td></tr>
+                <tr><td>0</td><td>1</td><td class="out-col">1</td></tr>
+                <tr><td>1</td><td>0</td><td class="out-col">1</td></tr>
+                <tr><td>1</td><td>1</td><td class="out-col">1</td></tr>
+            </table>
+        </div>
+        <div>
+            <h3>NOT Gate</h3>
+            <table>
+                <tr><th>A</th><th class="out-col">Y</th></tr>
+                <tr><td>0</td><td class="out-col">1</td></tr>
+                <tr><td>1</td><td class="out-col">0</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <h2>2. Universal Gates Truth Tables</h2>
+    <div class="grid">
+        <div>
+            <h3>NAND Gate</h3>
+            <table>
+                <tr><th>A</th><th>B</th><th class="out-col">Y</th></tr>
+                <tr><td>0</td><td>0</td><td class="out-col">1</td></tr>
+                <tr><td>0</td><td>1</td><td class="out-col">1</td></tr>
+                <tr><td>1</td><td>0</td><td class="out-col">1</td></tr>
+                <tr><td>1</td><td>1</td><td class="out-col">0</td></tr>
+            </table>
+        </div>
+        <div>
+            <h3>NOR Gate</h3>
+            <table>
+                <tr><th>A</th><th>B</th><th class="out-col">Y</th></tr>
+                <tr><td>0</td><td>0</td><td class="out-col">1</td></tr>
+                <tr><td>0</td><td>1</td><td class="out-col">0</td></tr>
+                <tr><td>1</td><td>0</td><td class="out-col">0</td></tr>
+                <tr><td>1</td><td>1</td><td class="out-col">0</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <h2>3. Derived Gates Truth Tables</h2>
+    <div class="grid">
+        <div>
+            <h3>XOR Gate</h3>
+            <table>
+                <tr><th>A</th><th>B</th><th class="out-col">Y</th></tr>
+                <tr><td>0</td><td>0</td><td class="out-col">0</td></tr>
+                <tr><td>0</td><td>1</td><td class="out-col">1</td></tr>
+                <tr><td>1</td><td>0</td><td class="out-col">1</td></tr>
+                <tr><td>1</td><td>1</td><td class="out-col">0</td></tr>
+            </table>
+        </div>
+        <div>
+            <h3>XNOR Gate</h3>
+            <table>
+                <tr><th>A</th><th>B</th><th class="out-col">Y</th></tr>
+                <tr><td>0</td><td>0</td><td class="out-col">1</td></tr>
+                <tr><td>0</td><td>1</td><td class="out-col">0</td></tr>
+                <tr><td>1</td><td>0</td><td class="out-col">0</td></tr>
+                <tr><td>1</td><td>1</td><td class="out-col">1</td></tr>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gate Expressions Only</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; color: #333; }
+        table { border-collapse: collapse; width: 100%; max-width: 300px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+        th { background-color: #f5f5f5; }
+        code { font-size: 1.1em; font-weight: bold; color: #d63384; }
+    </style>
+</head>
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Gate</th>
+                <th>Expression</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>AND</td><td><code>Y = A &middot; B</code></td></tr>
+            <tr><td>OR</td><td><code>Y = A + B</code></td></tr>
+            <tr><td>NOT</td><td><code>Y = A'</code></td></tr>
+            <tr><td>NAND</td><td><code>Y = (A &middot; B)'</code></td></tr>
+            <tr><td>NOR</td><td><code>Y = (A + B)'</code></td></tr>
+            <tr><td>XOR</td><td><code>Y = A &oplus; B</code></td></tr>
+            <tr><td>XNOR</td><td><code>Y = A &odot; B</code></td></tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
