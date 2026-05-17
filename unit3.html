@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed Guide on Parity Generators</title>
+    <style>
+          img {
+  
+  max-width: 100%;
+  height: auto; 
+  object-fit: cover; 
+  display: block; 
+  image-rendering: -webkit-optimize-contrast;
+}
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f7f6;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1a5276;
+            border-bottom: 2px solid #2980b9;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 25px;
+        }
+        h3 {
+            color: #2e4053;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        .highlight {
+            background-color: #ebf5fb;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+            font-style: italic;
+        }
+        ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .bold-text {
+            font-weight: bold;
+            color: #111;
+        }
+         .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+         table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+           
+            color:black;
+            font-weight: bold;
+        }
+       
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Detailed Guide on Parity Generators</h1>
+    
+    <p>A <strong>parity generator</strong> is a combinational logic circuit designed to add an extra bit—called a <strong>parity bit</strong>—to a binary data word before it is transmitted. Its primary purpose is to enable error detection at the destination.</p>
+    
+   
+    <h2> Even vs. Odd Parity</h2>
+    
+
+    <h3>1. Even Parity Generator</h3>
+    <p>The goal is to make the total number of 1s in the complete message (data bits + parity bit) <span class="bold-text">even</span>.</p>
+    <ul>
+        <li><strong>If the data has an even number of 1s:</strong> The data is already compliant. The generator outputs a <span class="bold-text">0</span>.</li>
+        <li><strong>If the data has an odd number of 1s:</strong> The generator outputs a <span class="bold-text">1</span> to make the overall count even.</li>
+    </ul>
+    <h2>4-bit even parity generator</h2>
+<img src="4-bit-even-parity-generator.jpg" alt="">
+    <h3>2. Odd Parity Generator</h3>
+    <p>The goal is to make the total number of 1s in the complete message <span class="bold-text">odd</span>.</p>
+    <ul>
+        <li><strong>If the data has an even number of 1s:</strong> The generator outputs a <span class="bold-text">1</span> to make the overall count odd.</li>
+        <li><strong>If the data has an odd number of 1s:</strong> The data is already compliant. The generator outputs a <span class="bold-text">0</span>.</li>
+    </ul>
+    <h2> 4-bit odd parity generator </h2>
+    <img src="4-bit-odd-parity-generator.jpg" alt="">
+</div>
+<div class="container">
+    <table>
+    <thead>
+        <tr>
+            <th rowspan="2">Total 1s in Data<br>(4-Bit Input)</th>
+            <th colspan="2">Generated Parity Bit (P)</th>
+        </tr>
+        <tr>
+            <th>Even Parity</th>
+            <th>Odd Parity</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>0</strong> (Even)</td>
+            <td class="even-bit">0</td>
+            <td class="odd-bit">1</td>
+        </tr>
+        <tr>
+            <td><strong>1</strong> (Odd)</td>
+            <td class="even-bit">1</td>
+            <td class="odd-bit">0</td>
+        </tr>
+        <tr>
+            <td><strong>2</strong> (Even)</td>
+            <td class="even-bit">0</td>
+            <td class="odd-bit">1</td>
+        </tr>
+        <tr>
+            <td><strong>3</strong> (Odd)</td>
+            <td class="even-bit">1</td>
+            <td class="odd-bit">0</td>
+        </tr>
+        <tr>
+            <td><strong>4</strong> (Even)</td>
+            <td class="even-bit">0</td>
+            <td class="odd-bit">1</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<div class="container">
+    <h1>Detailed Guide on Parity Checkers</h1>
+    
+    <p>A <strong>parity checker</strong> is a combinational logic circuit deployed at the receiver end of a digital communication system. Its primary role is to inspect incoming data blocks to verify whether data corruption occurred during transmission.</p>
+    
+     <h2> Even vs. Odd Parity</h2>
+ 
+
+    <h3>1. Even Parity Checker</h3>
+    <p>This circuit verifies if the total count of 1s in the entire received block is <span class="bold-text">even</span>.</p>
+    <ul>
+        <li><strong>Valid State:</strong> Total count of 1s is even &rarr; Checker outputs <span class="bold-text">0</span> (No error detected).</li>
+        <li><strong>Corrupted State:</strong> Total count of 1s is odd &rarr; Checker outputs <span class="bold-text">1</span> (Error detected).</li>
+    </ul>
+     <h2> 4-bit even parity checker</h2>
+    <img src="4-bit-even-parity-generator-circuit-diagram.jpg" alt="">
+
+    <h3>2. Odd Parity Checker</h3>
+    <p>This circuit verifies if the total count of 1s in the entire received block is <span class="bold-text">odd</span>.</p>
+    <ul>
+        <li><strong>Valid State:</strong> Total count of 1s is odd &rarr; Checker outputs <span class="bold-text">0</span> (No error detected).</li>
+        <li><strong>Corrupted State:</strong> Total count of 1s is even &rarr; Checker outputs <span class="bold-text">1</span> (Error detected).</li>
+    </ul>
+     <h2> 4-bit odd parity checker </h2>
+    <img src="4-bit-odd-parity-generator-circuit-diagram.jpg" alt="">
+
+<table>
+    <thead>
+        <tr>
+            <th rowspan="2">Total 1s Received<br>(Data + Parity Bit)</th>
+            <th colspan="2">Error Output (PEC)</th>
+        </tr>
+        <tr>
+            <th>Even Checker</th>
+            <th>Odd Checker</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>0</strong> (Even)</td>
+            <td class="valid">0 (Valid)</td>
+            <td class="error">1 (Error)</td>
+        </tr>
+        <tr>
+            <td><strong>1</strong> (Odd)</td>
+            <td class="error">1 (Error)</td>
+            <td class="valid">0 (Valid)</td>
+        </tr>
+        <tr>
+            <td><strong>2</strong> (Even)</td>
+            <td class="valid">0 (Valid)</td>
+            <td class="error">1 (Error)</td>
+        </tr>
+        <tr>
+            <td><strong>3</strong> (Odd)</td>
+            <td class="error">1 (Error)</td>
+            <td class="valid">0 (Valid)</td>
+        </tr>
+        <tr>
+            <td><strong>4</strong> (Even)</td>
+            <td class="valid">0 (Valid)</td>
+            <td class="error">1 (Error)</td>
+        </tr>
+        <tr>
+            <td><strong>5</strong> (Odd)</td>
+            <td class="error">1 (Error)</td>
+            <td class="valid">0 (Valid)</td>
+        </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>
