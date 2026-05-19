@@ -231,3 +231,1099 @@
 
 </body>
 </html>
+<hr>
+<hr>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplexers and Demultiplexers in Digital Electronics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .code-block {
+            background-color: #f8f9fa;
+            border-left: 4px solid #0056b3;
+            padding: 10px;
+            font-family: monospace;
+            margin: 10px 0;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #eee;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Multiplexers and Demultiplexers in Digital Electronics</h1>
+    <p>In digital electronics, <strong>multiplexers (MUX)</strong> and <strong>demultiplexers (DEMUX)</strong> are fundamental combinational logic circuits used to direct and route digital signals through a system. A <strong>multiplexer</strong> acts as a data selector by routing one of many inputs to a single output line, while a <strong>demultiplexer</strong> acts as a data distributor by routing a single input line to one of many outputs.</p>
+
+    <hr>
+
+    <h2>Multiplexer (MUX)</h2>
+    <p>A multiplexer combines digital information from several sources and transmits it over a single channel. It functions like a multi-position electronic switch controlled by select lines.</p>
+    <img src="Multiplexer.png" alt="">
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2:1 Multiplexer (MUX) - Circuit, Logic Diagram & Truth Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            color: #333;
+            max-width: 800px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        table {
+            width: 100%;
+            max-width: 400px;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .code-block {
+            background-color: #f8f9fa;
+            border-left: 4px solid #1abc9c;
+            padding: 10px;
+            font-family: monospace;
+            margin: 10px 0;
+        }
+        .diagram-container {
+            background-color: #fdfefe;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 15px 0;
+            display: inline-block;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #eee;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+   
+    <h2>Truth Table</h2>
+    <p>The truth table establishes the output state <strong>Y</strong> for every possible logical input combination of the select line <strong>S</strong>, input <strong>I<sub>0</sub></strong>, and input <strong>I<sub>1</sub></strong>.</p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Select Line (S)</th>
+                <th>Input 0 (I<sub>0</sub>)</th>
+                <th>Input 1 (I<sub>1</sub>)</th>
+                <th>Output (Y)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>X (Don't Care)</td>
+                <td><strong>0</strong></td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>1</td>
+                <td>X (Don't Care)</td>
+                <td><strong>1</strong></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>X (Don't Care)</td>
+                <td>0</td>
+                <td><strong>0</strong></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>X (Don't Care)</td>
+                <td>1</td>
+                <td><strong>1</strong></td>
+            </tr>
+        </tbody>
+    </table>    
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2:1 Multiplexer (MUX) - SVG Logic Diagram</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            color: #333;
+            max-width: 800px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .diagram-box {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 650px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .gate-text {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            fill: #334155;
+        }
+        .label-text {
+            font-family: monospace;
+            font-size: 16px;
+            font-weight: bold;
+            fill: #0f172a;
+        }
+        .expr-text {
+            font-family: monospace;
+            font-size: 12px;
+            fill: #64748b;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #e2e8f0;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>2:1 Multiplexer Logic Diagram</h1>
+    <p>This is a complete, scalable vector graphics (SVG) schematic circuit layout for a standard 2:1 Multiplexer. It maps out exactly how the NOT, AND, and OR gates connect to route the binary signals.</p>
+
+    <div class="diagram-box">
+        <svg xmlns="http://w3.org" viewBox="0 0 620 320" width="100%" height="100%">
+            <!-- Define markers for connection dots -->
+            <defs>
+                <circle id="dot" cx="0" cy="0" r="4" fill="#0f172a"/>
+            </defs>
+
+            <!-- Input Lines & Labels -->
+            <text x="30" y="64" class="label-text">I₀</text>
+            <line x1="60" y1="60" x2="260" y2="60" stroke="#0f172a" stroke-width="2"/>
+
+            <text x="30" y="164" class="label-text">S</text>
+            <line x1="60" y1="160" x2="100" y2="160" stroke="#0f172a" stroke-width="2"/>
+            <!-- S split path to lower AND -->
+            <use href="#dot" x="100" y="160"/>
+            <line x1="100" y1="160" x2="100" y2="260" stroke="#0f172a" stroke-width="2"/>
+            <line x1="100" y1="260" x2="260" y2="260" stroke="#0f172a" stroke-width="2"/>
+
+            <text x="30" y="224" class="label-text">I₁</text>
+            <line x1="60" y1="220" x2="260" y2="220" stroke="#0f172a" stroke-width="2"/>
+
+            <!-- NOT Gate (Inverter for S) -->
+            <line x1="100" y1="160" x2="130" y2="160" stroke="#0f172a" stroke-width="2"/>
+            <!-- Triangle -->
+            <polygon points="130,145 130,175 160,160" fill="#f8fafc" stroke="#0f172a" stroke-width="2"/>
+            <!-- Bubble -->
+            <circle cx="165" cy="160" r="5" fill="#f8fafc" stroke="#0f172a" stroke-width="2"/>
+            <text x="133" y="193" class="expr-text">NOT</text>
+            <!-- Inverted Output Line to Upper AND -->
+            <line x1="170" y1="160" x2="200" y2="160" stroke="#0f172a" stroke-width="2"/>
+            <line x1="200" y1="160" x2="200" y2="100" stroke="#0f172a" stroke-width="2"/>
+            <line x1="200" y1="100" x2="260" y2="100" stroke="#0f172a" stroke-width="2"/>
+            <text x="175" y="150" class="expr-text">S'</text>
+
+            <!-- Upper AND Gate -->
+            <!-- Back straight edge, round front -->
+            <path d="M 260,50 L 260,110 A 30,30 0 0,0 290,80 Z" fill="#eff6ff" stroke="#1e40af" stroke-width="2"/>
+            <text x="265" y="85" class="gate-text" fill="#1e40af">AND</text>
+            <text x="300" y="70" class="expr-text">I₀S'</text>
+
+            <!-- Lower AND Gate -->
+            <path d="M 260,210 L 260,270 A 30,30 0 0,0 290,240 Z" fill="#eff6ff" stroke="#1e40af" stroke-width="2"/>
+            <text x="265" y="245" class="gate-text" fill="#1e40af">AND</text>
+            <text x="300" y="230" class="expr-text">I₁S</text>
+
+            <!-- Outputs from AND gates to OR gate -->
+            <line x1="290" y1="80" x2="380" y2="80" stroke="#0f172a" stroke-width="2"/>
+            <line x1="380" y1="80" x2="380" y2="130" stroke="#0f172a" stroke-width="2"/>
+            <line x1="380" y1="130" x2="415" y2="130" stroke="#0f172a" stroke-width="2"/>
+
+            <line x1="290" y1="240" x2="380" y2="240" stroke="#0f172a" stroke-width="2"/>
+            <line x1="380" y1="240" x2="380" y2="190" stroke="#0f172a" stroke-width="2"/>
+            <line x1="380" y1="190" x2="415" y2="190" stroke="#0f172a" stroke-width="2"/>
+
+            <!-- OR Gate -->
+            <!-- Curved back edge, pointed front -->
+            <path d="M 410,110 C 425,125 425,195 410,210 C 430,210 460,180 470,160 C 460,140 430,110 410,110 Z" fill="#ecfdf5" stroke="#065f46" stroke-width="2"/>
+            <text x="420" y="165" class="gate-text" fill="#065f46">OR</text>
+
+            <!-- Final Circuit Output -->
+            <line x1="470" y1="160" x2="540" y2="160" stroke="#0f172a" stroke-width="2"/>
+            <text x="555" y="165" class="label-text">Y</text>
+            <text x="465" y="145" class="expr-text" font-weight="bold" fill="#0f172a">Y = I₀S' + I₁S</text>
+        </svg>
+    </div>
+
+   
+</body>
+</html>
+
+
+    <h3>Key Characteristics</h3>
+    <ul>
+        <li><strong>Mathematical Relation:</strong> For 2<sup>n</sup> input lines, a MUX requires <em>n</em> selection (control) lines to produce exactly 1 output line.</li>
+        <li><strong>Alternative Names:</strong> Often called a <strong>Data Selector</strong>, Many-to-One circuit, or Parallel-to-Serial converter.</li>
+        <li><strong>Common Configurations:</strong> 2-to-1 MUX (1 select line), 4-to-1 MUX (2 select lines), and 8-to-1 MUX (3 select lines).</li>
+    </ul>
+
+    
+    <hr>
+
+    <h2>Demultiplexer (DEMUX)</h2>
+    <p>A demultiplexer reverses the operation of a multiplexer by taking information from a single input stream and steering it to one of multiple individual output channels.</p>
+     <img src="Demulyiplexer.png" alt="">
+
+     <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1:2 Demultiplexer (DEMUX) - Circuit, Truth Table & SVG Diagram</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            color: #333;
+            max-width: 800px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        table {
+            width: 100%;
+            max-width: 450px;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .code-block {
+            background-color: #f8f9fa;
+            border-left: 4px solid #e74c3c;
+            padding: 10px;
+            font-family: monospace;
+            margin: 10px 0;
+        }
+        .diagram-box {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 650px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .gate-text {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            fill: #1e40af;
+        }
+        .label-text {
+            font-family: monospace;
+            font-size: 16px;
+            font-weight: bold;
+            fill: #0f172a;
+        }
+        .expr-text {
+            font-family: monospace;
+            font-size: 12px;
+            fill: #64748b;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #e2e8f0;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <h2>Truth Table</h2>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Select Line (S)</th>
+                <th>Data Input (D)</th>
+                <th>Output 0 (Y<sub>0</sub>)</th>
+                <th>Output 1 (Y<sub>1</sub>)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td><strong>0</strong></td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>1</td>
+                <td><strong>1</strong></td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>0</td>
+                <td><strong>0</strong></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+                <td><strong>1</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    <h2>Logic Diagram</h2>
+    <p>This scalable vector graphics (SVG) schematic maps out the internal hardware structure. It utilizes <strong>1 NOT gate</strong> and <strong>2 AND gates</strong> to execute the distribution logic.</p>
+
+    <div class="diagram-box">
+        <svg xmlns="http://w3.org" viewBox="0 0 620 280" width="100%" height="100%">
+            <!-- Define markers for connection dots -->
+            <defs>
+                <circle id="dot" cx="0" cy="0" r="4" fill="#0f172a"/>
+            </defs>
+
+            <!-- Input Lines & Labels -->
+            <text x="30" y="64" class="label-text">D</text>
+            <line x1="60" y1="60" x2="260" y2="60" stroke="#0f172a" stroke-width="2"/>
+            <!-- D split path to lower AND -->
+            <use href="#dot" x="140" y="60"/>
+            <line x1="140" y1="60" x2="140" y2="220" stroke="#0f172a" stroke-width="2"/>
+            <line x1="140" y1="220" x2="260" y2="220" stroke="#0f172a" stroke-width="2"/>
+
+            <text x="30" y="144" class="label-text">S</text>
+            <line x1="60" y1="140" x2="180" y2="140" stroke="#0f172a" stroke-width="2"/>
+            <!-- S split path to lower AND -->
+            <use href="#dot" x="180" y="140"/>
+            <line x1="180" y1="140" x2="180" y2="260" stroke="#0f172a" stroke-width="2"/>
+            <line x1="180" y1="260" x2="260" y2="260" stroke="#0f172a" stroke-width="2"/>
+
+            <!-- NOT Gate (Inverter for S) -->
+            <!-- Triangle -->
+            <polygon points="80,125 80,155 110,140" fill="#f8fafc" stroke="#0f172a" stroke-width="2"/>
+            <!-- Bubble -->
+            <circle cx="115" cy="140" r="5" fill="#f8fafc" stroke="#0f172a" stroke-width="2"/>
+            <text x="83" y="173" class="expr-text">NOT</text>
+            <!-- Inverted Output Line to Upper AND -->
+            <line x1="120" y1="140" x2="220" y2="140" stroke="#0f172a" stroke-width="2"/>
+            <line x1="220" y1="140" x2="220" y2="100" stroke="#0f172a" stroke-width="2"/>
+            <line x1="220" y1="100" x2="260" y2="100" stroke="#0f172a" stroke-width="2"/>
+            <text x="125" y="130" class="expr-text">S'</text>
+
+            <!-- Upper AND Gate (Generates Y0) -->
+            <path d="M 260,50 L 260,110 A 30,30 0 0,0 290,80 Z" fill="#eff6ff" stroke="#1e40af" stroke-width="2"/>
+            <text x="265" y="85" class="gate-text">AND</text>
+
+            <!-- Lower AND Gate (Generates Y1) -->
+            <path d="M 260,210 L 260,270 A 30,30 0 0,0 290,240 Z" fill="#eff6ff" stroke="#1e40af" stroke-width="2"/>
+            <text x="265" y="245" class="gate-text">AND</text>
+
+            <!-- Output Lines & Labels -->
+            <line x1="290" y1="80" x2="420" y2="80" stroke="#0f172a" stroke-width="2"/>
+            <text x="435" y="85" class="label-text">Y₀</text>
+            <text x="300" y="73" class="expr-text" font-weight="bold" fill="#0f172a">Y₀ = DS'</text>
+
+            <line x1="290" y1="240" x2="420" y2="240" stroke="#0f172a" stroke-width="2"/>
+            <text x="435" y="245" class="label-text">Y₁</text>
+            <text x="300" y="233" class="expr-text" font-weight="bold" fill="#0f172a">Y₁ = DS</text>
+        </svg>
+    </div>
+
+   
+</body>
+</html>
+
+    <h3>Key Characteristics</h3>
+    <ul>
+        <li><strong>Mathematical Relation:</strong> With 1 data input line and <em>n</em> select lines, a DEMUX routes data to one of 2<sup>n</sup> available output lines.</li>
+        <li><strong>Alternative Names:</strong> Frequently referred to as a <strong>Data Distributor</strong> or Serial-to-Parallel converter.</li>
+        <li><strong>Common Configurations:</strong> 1-to-2 DEMUX (1 select line), 1-to-4 DEMUX (2 select lines), and 1-to-8 DEMUX (3 select lines).</li>
+    </ul>
+
+
+    <hr>
+    <h2>Direct Comparison</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Multiplexer (MUX)</th>
+                <th>Demultiplexer (DEMUX)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Primary Function</strong></td>
+                <td>Selects one of many inputs.</td>
+                <td>Distributes one input to many outputs.</td>
+            </tr>
+            <tr>
+                <td><strong>Inputs vs Outputs</strong></td>
+                <td>2<sup>n</sup> inputs, 1 output.</td>
+                <td>1 input, 2<sup>n</sup> outputs.</td>
+            </tr>
+            <tr>
+                <td><strong>Core Concept</strong></td>
+                <td>Many-to-One mechanism.</td>
+                <td>One-to-Many mechanism.</td>
+            </tr>
+            <tr>
+                <td><strong>System Placement</strong></td>
+                <td>Transmitter end in Time Division Multiplexing.</td>
+                <td>Receiver end in Time Division Multiplexing.</td>
+            </tr>
+            <tr>
+                <td><strong>Data Conversion</strong></td>
+                <td>Parallel-to-Serial conversion.</td>
+                <td>Serial-to-Parallel conversion.</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    <h2>Primary Applications</h2>
+    <ul>
+        <li><strong>Data Communication Systems:</strong> MUX and DEMUX units work in pairs over networks. The MUX condenses audio, video, or text data onto a single shared transmission medium, and the DEMUX reconstructs the original channels at the receiving destination.</li>
+        <li><strong>Implementing Boolean Logic:</strong> Multiplexers can substitute for groups of standard logic gates to handle complex logic expressions efficiently, shrinking overall circuit size and layout complexity.</li>
+        <li><strong>Computer Memory & Routing:</strong> Used inside microprocessors to route mathematical results coming from an Arithmetic Logic Unit (ALU) into selected destination registers or memory addresses.</li>
+    </ul>
+
+</body>
+</html>
+<hr>
+<hr>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encoders and Decoders in Digital Electronics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .code-block {
+            background-color: #f8f9fa;
+            border-left: 4px solid #2c3e50;
+            padding: 10px;
+            font-family: monospace;
+            margin: 10px 0;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #eee;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    
+
+
+    <h2>Encoder</h2>
+    <p>An encoder converts an active input signal into a coded binary format (such as standard Binary, BCD, or Octal).</p>
+     <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4-to-2 Priority Encoder - Circuit, Truth Table & SVG Diagram</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            color: #333;
+            max-width: 800px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        table {
+            width: 100%;
+            max-width: 550px;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .code-block {
+            background-color: #f8f9fa;
+            border-left: 4px solid #f39c12;
+            padding: 10px;
+            font-family: monospace;
+            margin: 10px 0;
+        }
+        .diagram-box {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 650px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .gate-text {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            fill: #065f46;
+        }
+        .label-text {
+            font-family: monospace;
+            font-size: 16px;
+            font-weight: bold;
+            fill: #0f172a;
+        }
+        .expr-text {
+            font-family: monospace;
+            font-size: 12px;
+            fill: #64748b;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #e2e8f0;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+   
+    <h2>Truth Table</h2>
+    
+    
+    <table>
+        <thead>
+            <tr>
+                <th colspan="4">Inputs</th>
+                <th colspan="3">Outputs</th>
+            </tr>
+            <tr>
+                <th>D<sub>3</sub></th>
+                <th>D<sub>2</sub></th>
+                <th>D<sub>1</sub></th>
+                <th>D<sub>0</sub></th>
+                <th>Y<sub>1</sub></th>
+                <th>Y<sub>0</sub></th>
+                <th>Valid (V)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td><strong>0</strong> (Invalid)</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>1</td>
+                <td>0</td>
+                <td>0</td>
+                <td><strong>1</strong></td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>1</td>
+                <td>X</td>
+                <td>0</td>
+                <td>1</td>
+                <td><strong>1</strong></td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>1</td>
+                <td>X</td>
+                <td>X</td>
+                <td>1</td>
+                <td>0</td>
+                <td><strong>1</strong></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>1</td>
+                <td>1</td>
+                <td><strong>1</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    
+
+    <h2>Logic Diagram</h2>
+    <p>This scalable vector graphics (SVG) schematic details the combinational implementation using <strong>1 NOT gate</strong>, <strong>1 AND gate</strong>, and <strong>3 OR gates</strong>.</p>
+
+    <div class="diagram-box">
+        <svg xmlns="http://w3.org" viewBox="0 0 620 380" width="100%" height="100%">
+            <!-- Define connection dot -->
+            <defs>
+                <circle id="dot" cx="0" cy="0" r="4" fill="#0f172a"/>
+            </defs>
+
+            <!-- Inputs and Rails -->
+            <text x="30" y="44" class="label-text">D₃</text>
+            <line x1="60" y1="40" x2="380" y2="40" stroke="#0f172a" stroke-width="2"/>
+            <use href="#dot" x="120" y="40"/>
+            <line x1="120" y1="40" x2="120" y2="150" stroke="#0f172a" stroke-width="2"/>
+            <line x1="120" y1="150" x2="380" y2="150" stroke="#0f172a" stroke-width="2"/>
+            
+            <use href="#dot" x="80" y="40"/>
+            <line x1="80" y1="40" x2="80" y2="310" stroke="#0f172a" stroke-width="2"/>
+            <line x1="80" y1="310" x2="380" y2="310" stroke="#0f172a" stroke-width="2"/>
+
+            <text x="30" y="84" class="label-text">D₂</text>
+            <line x1="60" y1="80" x2="380" y2="80" stroke="#0f172a" stroke-width="2"/>
+            <use href="#dot" x="160" y="80"/>
+            <line x1="160" y1="80" x2="160" y2="330" stroke="#0f172a" stroke-width="2"/>
+            <line x1="160" y1="330" x2="380" y2="330" stroke="#0f172a" stroke-width="2"/>
+
+            <text x="30" y="204" class="label-text">D₁</text>
+            <line x1="60" y1="200" x2="260" y2="200" stroke="#0f172a" stroke-width="2"/>
+            <use href="#dot" x="140" y="200"/>
+            <line x1="140" y1="200" x2="140" y2="350" stroke="#0f172a" stroke-width="2"/>
+            <line x1="140" y1="350" x2="380" y2="350" stroke="#0f172a" stroke-width="2"/>
+
+            <text x="30" y="374" class="label-text">D₀</text>
+            <line x1="60" y1="370" x2="380" y2="370" stroke="#0f172a" stroke-width="2"/>
+
+            <!-- NOT Gate for D2 -->
+            <use href="#dot" x="200" y="80"/>
+            <line x1="200" y1="80" x2="200" y2="110" stroke="#0f172a" stroke-width="2"/>
+            <line x1="200" y1="110" x2="215" y2="110" stroke="#0f172a" stroke-width="2"/>
+            <polygon points="215,100 215,120 235,110" fill="#f8fafc" stroke="#0f172a" stroke-width="2"/>
+            <circle cx="239" cy="110" r="4" fill="#f8fafc" stroke="#0f172a" stroke-width="2"/>
+            <line x1="243" y1="110" x2="260" y2="110" stroke="#0f172a" stroke-width="2"/>
+
+            <!-- AND Gate (D1 AND NOT D2) -->
+            <path d="M 260,95 L 260,215 A 15,15 0 0,0 275,110 Z" fill="#eff6ff" stroke="#1e40af" stroke-width="2"/>
+            <text x="262" y="114" class="expr-text" fill="#1e40af">AND</text>
+            <line x1="275" y1="110" x2="350" y2="110" stroke="#0f172a" stroke-width="2"/>
+            <line x1="350" y1="110" x2="350" y2="170" stroke="#0f172a" stroke-width="2"/>
+            <line x1="350" y1="170" x2="380" y2="170" stroke="#0f172a" stroke-width="2"/>
+
+            <!-- OR Gate 1 (Generates Y1) -->
+            <path d="M 380,30 C 390,40 390,80 380,90 C 395,90 415,70 425,60 C 415,50 395,30 380,30 Z" fill="#ecfdf5" stroke="#065f46" stroke-width="2"/>
+            <text x="385" y="65" class="gate-text">OR</text>
+            <line x1="425" y1="60" x2="520" y2="60" stroke="#0f172a" stroke-width="2"/>
+            <text x="535" y="65" class="label-text">Y₁</text>
+
+            <!-- OR Gate 2 (Generates Y0) -->
+            <path d="M 380,140 C 390,150 390,190 380,200 C 395,200 415,180 425,170 C 415,160 395,140 380,140 Z" fill="#ecfdf5" stroke="#065f46" stroke-width="2"/>
+            <text x="385" y="175" class="gate-text">OR</text>
+            <line x1="425" y1="170" x2="520" y2="170" stroke="#0f172a" stroke-width="2"/>
+            <text x="535" y="175" class="label-text">Y₀</text>
+
+            <!-- OR Gate 3 (Generates Valid pin V) -->
+            <!-- 4-Input OR simplified to block styling for clean routing -->
+            <path d="M 380,300 C 390,310 390,380 380,390 C 395,390 415,360 425,345 C 415,330 395,300 380,300 Z" fill="#ecfdf5" stroke="#065f46" stroke-width="2"/>
+            <text x="385" y="350" class="gate-text">OR</text>
+            <line x1="425" y1="345" x2="520" y2="345" stroke="#0f172a" stroke-width="2"/>
+            <text x="535" y="350" class="label-text">V</text>
+        </svg>
+    </div>
+
+   
+</body>
+</html>
+
+    <h3>Key Characteristics</h3>
+    <ul>
+        <li><strong>Mathematical Relation:</strong> For 2<sup>n</sup> (or fewer) input lines, an encoder generates an <em>n</em>-bit coded binary output.</li>
+        <li><strong>Primary Rule:</strong> In a standard encoder, only one input line is expected to be active at any given time.</li>
+        <li><strong>Special Types:</strong> Priority Encoders resolve conflicts when multiple inputs are triggered simultaneously by encoding only the input with the highest numerical priority.</li>
+        <li><strong>Common Configurations:</strong> 4-to-2 Encoder (4 inputs, 2 outputs), 8-to-3 Octal-to-Binary Encoder, and 10-to-4 Decimal-to-BCD Encoder.</li>
+    </ul>
+
+    <hr>
+
+    <h2>Decoder</h2>
+    <p>A decoder interprets an <em>n</em>-bit coded binary input stream and activates exactly one corresponding output out of multiple possible choices.</p>
+     <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-to-4 Decoder - Circuit, Truth Table & SVG Diagram</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            color: #333;
+            max-width: 800px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        table {
+            width: 100%;
+            max-width: 500px;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .code-block {
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 10px;
+            font-family: monospace;
+            margin: 10px 0;
+        }
+        .diagram-box {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 650px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .gate-text {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            fill: #1e40af;
+        }
+        .label-text {
+            font-family: monospace;
+            font-size: 16px;
+            font-weight: bold;
+            fill: #0f172a;
+        }
+        .expr-text {
+            font-family: monospace;
+            font-size: 12px;
+            fill: #64748b;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #e2e8f0;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Truth Table</h2>
+    
+    <table>
+        <thead>
+            <tr>
+                <th colspan="3">Inputs</th>
+                <th colspan="4">Outputs</th>
+            </tr>
+            <tr>
+                <th>EN</th>
+                <th>A</th>
+                <th>B</th>
+                <th>Y<sub>3</sub></th>
+                <th>Y<sub>2</sub></th>
+                <th>Y<sub>1</sub></th>
+                <th>Y<sub>0</sub></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td>X</td>
+                <td>X</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td><strong>0</strong></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td><strong>1</strong></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>1</td>
+                <td>0</td>
+                <td>0</td>
+                <td><strong>1</strong></td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+                <td>0</td>
+                <td><strong>1</strong></td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td><strong>1</strong></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <h2>Logic Diagram</h2>
+    <p>This scalable vector graphics (SVG) schematic maps out the decoder circuit configuration using <strong>2 NOT gates</strong> and <strong>4 3-input AND gates</strong>.</p>
+
+    <div class="diagram-box">
+        <svg xmlns="http://w3.org" viewBox="0 0 620 420" width="100%" height="100%">
+            <!-- Define connection dot -->
+            <defs>
+                <circle id="dot" cx="0" cy="0" r="4" fill="#0f172a"/>
+            </defs>
+
+            <!-- Inputs and Vertical Bus Rails -->
+            <text x="30" y="34" class="label-text">A</text>
+            <line x1="40" y1="50" x2="40" y2="380" stroke="#0f172a" stroke-width="2"/>
+            
+            <!-- NOT Gate for A -->
+            <line x1="40" y1="50" x2="60" y2="50" stroke="#0f172a" stroke-width="2"/>
+            <polygon points="60,40 60,60 80,50" fill="#f8fafc" stroke="#0f172a" stroke-width="2"/>
+            <circle cx="84" cy="50" r="4" fill="#f8fafc" stroke="#0f172a" stroke-width="2"/>
+            <line x1="88" y1="50" x2="88" y2="380" stroke="#0f172a" stroke-width="2"/>
+            <text x="94" y="44" class="expr-text">A'</text>
+
+            <text x="120" y="34" class="label-text">B</text>
+            <line x1="130" y1="50" x2="130" y2="380" stroke="#0f172a" stroke-width="2"/>
+            
+            <!-- NOT Gate for B -->
+            <line x1="130" y1="50" x2="150" y2="50" stroke="#0f172a" stroke-width="2"/>
+            <polygon points="150,40 150,60 170,50" fill="#f8fafc" stroke="#0f172a" stroke-width="2"/>
+            <circle cx="174" cy="50" r="4" fill="#f8fafc" stroke="#0f172a" stroke-width="2"/>
+            <line x1="178" y1="50" x2="178" y2="380" stroke="#0f172a" stroke-width="2"/>
+            <text x="184" y="44" class="expr-text">B'</text>
+
+            <text x="210" y="34" class="label-text">EN</text>
+            <line x1="220" y1="50" x2="220" y2="380" stroke="#0f172a" stroke-width="2"/>
+
+            <!-- AND Gate 0 (Y0 = EN·A'·B') -->
+            <use href="#dot" x="88" y="100"/>
+            <line x1="88" y1="100" x2="320" y2="100" stroke="#0f172a" stroke-width="2"/>
+            <use href="#dot" x="178" y="115"/>
+            <line x1="178" y1="115" x2="320" y2="115" stroke="#0f172a" stroke-width="2"/>
+            <use href="#dot" x="220" y="130"/>
+            <line x1="220" y1="130" x2="320" y2="130" stroke="#0f172a" stroke-width="2"/>
+            <path d="M 320,90 L 320,140 A 25,25 0 0,0 345,115 Z" fill="#eff6ff" stroke="#1e40af" stroke-width="2"/>
+            <line x1="345" y1="115" x2="480" y2="115" stroke="#0f172a" stroke-width="2"/>
+            <text x="495" y="120" class="label-text">Y₀</text>
+
+            <!-- AND Gate 1 (Y1 = EN·A'·B) -->
+            <use href="#dot" x="88" y="180"/>
+            <line x1="88" y1="180" x2="320" y2="180" stroke="#0f172a" stroke-width="2"/>
+            <use href="#dot" x="130" y="195"/>
+            <line x1="130" y1="195" x2="320" y2="195" stroke="#0f172a" stroke-width="2"/>
+            <use href="#dot" x="220" y="210"/>
+            <line x1="220" y1="210" x2="320" y2="210" stroke="#0f172a" stroke-width="2"/>
+            <path d="M 320,170 L 320,220 A 25,25 0 0,0 345,195 Z" fill="#eff6ff" stroke="#1e40af" stroke-width="2"/>
+            <line x1="345" y1="195" x2="480" y2="195" stroke="#0f172a" stroke-width="2"/>
+            <text x="495" y="200" class="label-text">Y₁</text>
+
+            <!-- AND Gate 2 (Y2 = EN·A·B') -->
+            <use href="#dot" x="40" y="260"/>
+            <line x1="40" y1="260" x2="320" y2="260" stroke="#0f172a" stroke-width="2"/>
+            <use href="#dot" x="178" y="275"/>
+            <line x1="178" y1="275" x2="320" y2="275" stroke="#0f172a" stroke-width="2"/>
+            <use href="#dot" x="220" y="290"/>
+            <line x1="220" y1="290" x2="320" y2="290" stroke="#0f172a" stroke-width="2"/>
+            <path d="M 320,250 L 320,300 A 25,25 0 0,0 345,275 Z" fill="#eff6ff" stroke="#1e40af" stroke-width="2"/>
+            <line x1="345" y1="275" x2="480" y2="275" stroke="#0f172a" stroke-width="2"/>
+            <text x="495" y="280" class="label-text">Y₂</text>
+
+            <!-- AND Gate 3 (Y3 = EN·A·B) -->
+            <use href="#dot" x="40" y="340"/>
+            <line x1="40" y1="340" x2="320" y2="340" stroke="#0f172a" stroke-width="2"/>
+            <use href="#dot" x="130" y="355"/>
+            <line x1="130" y1="355" x2="320" y2="355" stroke="#0f172a" stroke-width="2"/>
+            <use href="#dot" x="220" y="370"/>
+            <line x1="220" y1="370" x2="320" y2="370" stroke="#0f172a" stroke-width="2"/>
+            <path d="M 320,330 L 320,380 A 25,25 0 0,0 345,355 Z" fill="#eff6ff" stroke="#1e40af" stroke-width="2"/>
+            <line x1="345" y1="355" x2="480" y2="355" stroke="#0f172a" stroke-width="2"/>
+            <text x="495" y="360" class="label-text">Y₃</text>
+        </svg>
+    </div>
+
+    </body>
+</html>
+
+    <h3>Key Characteristics</h3>
+    <ul>
+        <li><strong>Mathematical Relation:</strong> An <em>n</em>-bit coded input line produces up to 2<sup>n</sup> distinct output channels.</li>
+        <li><strong>Primary Rule:</strong> For any valid binary input code combination, exactly one unique output line becomes active (either HIGH or LOW depending on active-high or active-low design).</li>
+        <li><strong>Common Configurations:</strong> 2-to-4 Decoder (2 inputs, 4 outputs), 3-to-8 Decoder (3 inputs, 8 outputs), and 4-to-16 Decoder.</li>
+    </ul>
+
+   
+    <hr>
+
+    <h2>Direct Comparison</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Encoder</th>
+                <th>Decoder</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Primary Function</strong></td>
+                <td>Converts an active signal to a binary code.</td>
+                <td>Converts a binary code to a single active output.</td>
+            </tr>
+            <tr>
+                <td><strong>Inputs vs Outputs</strong></td>
+                <td>2<sup>n</sup> inputs, <em>n</em> outputs.</td>
+                <td><em>n</em> inputs, 2<sup>n</sup> outputs.</td>
+            </tr>
+            <tr>
+                <td><strong>Data Handling</strong></td>
+                <td>Compresses data lines (Data Compression).</td>
+                <td>Expands data lines (Data Expansion).</td>
+            </tr>
+            <tr>
+                <td><strong>Enable Pin</strong></td>
+                <td>Not mandatory for basic encoding operations.</td>
+                <td>Commonly used to activate or cascade chips.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2>Primary Applications</h2>
+    <ul>
+        <li><strong>Input Peripheral Interfacing:</strong> Encoders are utilized in computer keyboards, calculator keypads, and numeric buttons to translate human keystrokes into binary data that microprocessors understand.</li>
+        <li><strong>Memory Addressing:</strong> Decoders are built into RAM and ROM architectures to select specific rows, columns, or memory registers based on the binary address requested by the CPU.</li>
+        <li><strong>Output Visual Displays:</strong> BCD-to-Seven Segment decoders convert 4-bit binary coded decimal values into the specific 7-line patterns required to show numbers on digital clocks and instrumentation displays.</li>
+    </ul>
+
+</body>
+</html>
