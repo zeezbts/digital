@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequential Logic: Flip-Flops and Registers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+        }
+        ul {
+            margin-bottom: 15px;
+        }
+                 code {
+            background-color: #f8f9fa;
+            padding: 2px 6px;
+            border: 1px solid #eaeded;
+            border-radius: 4px;
+            font-family: Courier, monospace;
+            font-weight: bold;
+        }
+        .bold-text {
+            font-weight: bold;
+        }
+        .highlight {
+            color: #2980b9;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sequential Logic: Flip-Flops and Registers</h1>
+     <div class="definition-card">
+      <ol> <li> <p>A <span class="highlight">flip-flop</span> is a sequential circuit which consists of a single binary state of information or data.</p></li>
+        <li> <p>The digital circuit is a flip-flop which has <span class="highlight">two outputs</span> and are of <span class="highlight">opposite states</span>. It is also known as a <span class="highlight">Bistable Multivibrator</span>.</p></li>
+        </ol>
+    </div>
+
+    <h1>The 4 Types of Flip-Flops</h1>
+
+    <h2>1. SR Flip-Flop (Set-Reset)</h2>
+    <p>The foundation of all flip-flops. It uses two inputs to control a single bit of data.</p>
+    <p><span class="bold-text">Inputs:</span> <code>S</code> (Set to 1), <code>R</code> (Reset to 0)</p>
+    <p><span class="bold-text">How it works:</span></p>
+    <ul>
+        <li><code>S = 1, R = 0</code> &rarr; Output becomes 1.</li>
+        <li><code>S = 0, R = 1</code> &rarr; Output becomes 0.</li>
+        <li><code>S = 0, R = 0</code> &rarr; Hold (remembers the last state).</li>
+        <li><code>S = 1, R = 1</code> &rarr; <span class="alert-text">Invalid/Forbidden.</span> (Both outputs try to go low at once, crashing the system).</li>
+    </ul>
+<img src="SR_flip.png" alt="">
+    <h2>2. JK Flip-Flop (The Fixer)</h2>
+    <p>An upgraded SR flip-flop. It eliminates the forbidden state by routing outputs back into the inputs.</p>
+    <p><span class="bold-text">Inputs:</span> <code>J</code> (acts like Set), <code>K</code> (acts like Reset)</p>
+    <p><span class="bold-text">How it works:</span></p>
+    <ul>
+        <li><code>J = 1, K = 0</code> &rarr; Output becomes 1.</li>
+        <li><code>J = 0, K = 1</code> &rarr; Output becomes 0.</li>
+        <li><code>J = 0, K = 0</code> &rarr; Hold (no change).</li>
+        <li><code>J = 1, K = 1</code> &rarr; Toggle. (Inverts the output: 0 becomes 1, and 1 becomes 0).</li>
+    </ul>
+    <p><span class="alert-text">The Flaw:</span> If the clock pulse stays high too long, the output will toggle uncontrollably (Race-Around Condition).</p>
+<img src="JK_flip.png" alt="">
+    <h2>3. D Flip-Flop (Data / Delay)</h2>
+    <p>The most common flip-flop used today. It adds an inverter between S and R so the inputs can never match.</p>
+    <p><span class="bold-text">Input:</span> <code>D</code> (Data)</p>
+    <p><span class="bold-text">How it works:</span></p>
+    <p>Whatever value is at D gets copied to the output on the next clock tick.</p>
+    <ul>
+        <li><code>D = 1</code> &rarr; Output becomes 1.</li>
+        <li><code>D = 0</code> &rarr; Output becomes 0.</li>
+    </ul>
+    <p><span class="bold-text">Use case:</span> Central component for computer memory (RAM) and CPU registers.</p>
+<img src="D-flip-flop.png" alt="">
+<img src="D-logic-diag-300x123.png" alt="">
+    <h2>4. T Flip-Flop (Toggle)</h2>
+    <p>Created by connecting the J and K inputs of a JK flip-flop together.</p>
+    <p><span class="bold-text">Input:</span> <code>T</code> (Toggle)</p>
+    <p><span class="bold-text">How it works:</span></p>
+    <ul>
+        <li><code>T = 0</code> &rarr; Hold (no change).</li>
+        <li><code>T = 1</code> &rarr; Toggle (flips the output from 0 to 1, or 1 to 0).</li>
+    </ul>
+    <p><span class="bold-text">Use case:</span> Digital clocks, counters, and frequency dividers (it cuts clock speed exactly in half).</p>
+    <div class="div">
+<img src="T-logic-diag-300x143.png" alt="">
+<img src="T-flip-flop-300x127.png" alt="">
+</div>
+<h2>Master-Slave Flip-Flops</h2>
+    <p>To eliminate the race-around condition of a standard JK flip-flop, a Master-Slave configuration is used.</p>
+    <ul>
+        <li><span class="highlight">Structure:</span> It cascades two flip-flops together. The first is the Master (positive-edge triggered), and the second is the Slave (negative-edge triggered via an inverter).</li>
+        <li><span class="highlight">Operation:</span>
+            <ul>
+                <li>When the clock is high (<code>CLK = 1</code>), the Master accepts inputs while the Slave is locked.</li>
+                <li>When the clock goes low (<code>CLK = 0</code>), the Master locks its data, transferring its state to the Slave.</li>
+            </ul>
+        </li>
+        <li><span class="highlight">Result:</span> The output changes exactly once per clock period, ensuring total stability.</li>
+    </ul>
+
+     <h1>Shift Registers:</h1>
+    <p>A <span class="bold-text">Register</span> is a group of flip-flops working together to store multiple bits of digital data. A <span class="bold-text">Shift Register</span> is a specialized register that moves (shifts) those stored bits laterally from one flip-flop to the next on every clock pulse.</p>
+
+    <h2>Core Purpose of Shift Registers</h2>
+    <ul>
+        <li><span class="bold-text">Data Storage:</span> Temporarily holds binary words inside CPUs and controllers.</li>
+        <li><span class="bold-text">Data Conversion:</span> Translates data formatting between <span class="highlight">Serial</span> (one wire, bit-by-bit) and <span class="highlight">Parallel</span> (multiple wires, all at once).</li>
+        <li><span class="bold-text">Time Delay:</span> Delays a digital signal pipeline by a specific number of clock cycles.</li>
+    </ul>
+
+    <h2>The 4 Primary Types of Shift Registers</h2>
+
+    <h3>1. SISO (Serial-In, Serial-Out)</h3>
+    <ul>
+        <li><span class="bold-text">Data Entry:</span> One bit at a time, sequentially through a single input wire.</li>
+        <li><span class="bold-text">Data Exit:</span> One bit at a time, sequentially through a single output wire.</li>
+        <li><span class="bold-text">How it works:</span> It acts like a pipeline. A 4-bit SISO register requires 4 clock pulses to load data entirely, and 4 more pulses to shift it out completely.</li>
+        <li><span class="bold-text">Primary Use:</span> Digital time-delay lines and basic data buffers.</li>
+    </ul>
+
+    <h3>2. SIPO (Serial-In, Parallel-Out)</h3>
+    <ul>
+        <li><span class="bold-text">Data Entry:</span> One bit at a time, sequentially through a single input wire.</li>
+        <li><span class="bold-text">Data Exit:</span> All stored bits are read simultaneously from separate parallel output pins.</li>
+        <li><span class="bold-text">How it works:</span> Data creeps in bit-by-bit until the register is full. Once filled, the circuit reads all positions at the exact same moment.</li>
+        <li><span class="bold-text">Primary Use:</span> Converting single-line serial communications (like USB or SPI protocols) into parallel system data for processor buses.</li>
+    </ul>
+
+    <h3>3. PISO (Parallel-In, Serial-Out)</h3>
+    <ul>
+        <li><span class="bold-text">Data Entry:</span> All bits are loaded into the register simultaneously using multiple pins.</li>
+        <li><span class="bold-text">Data Exit:</span> Data is shifted out sequentially, one bit per clock cycle, through a single wire.</li>
+        <li><span class="bold-text">How it works:</span> A control pin switches the register into <code>Load</code> mode to grab a full data byte instantly, then switches to <code>Shift</code> mode to stream it down a single line.</li>
+        <li><span class="bold-text">Primary Use:</span> Converting internal computer parallel data into serial streams for long-distance transmission over minimal wiring.</li>
+    </ul>
+
+    <h3>4. PIPO (Parallel-In, Parallel-Out)</h3>
+    <ul>
+        <li><span class="bold-text">Data Entry:</span> All bits are loaded simultaneously through parallel input wires.</li>
+        <li><span class="bold-text">Data Exit:</span> All bits are read simultaneously from parallel output wires.</li>
+        <li><span class="bold-text">How it works:</span> It does not actively shift data between internal flip-flops during normal operation. It instantly captures an entire multi-bit word on a clock edge and holds it steady.</li>
+        <li><span class="bold-text">Primary Use:</span> Temporary storage registers inside CPU arithmetic logic units (ALUs).</li>
+    </ul></body>
+</html>
