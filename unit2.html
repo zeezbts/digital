@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Boolean Algebra Laws and Theorems</title>
+    <style>
+              body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            max-width: 700px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        ol > li {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 25px;
+            color: #1a1a1a;
+        }
+        dl {
+            font-size: 0.85em;
+            font-weight: normal;
+            margin: 10px 0 0 20px;
+            color: #333;
+        }
+        dt {
+            font-weight: bold;
+            margin-top: 10px;
+            color: #555;
+        }
+        dd {
+            margin-left: 0;
+            margin-bottom: 5px;
+        }
+        .definition {
+            font-style: italic;
+            margin-bottom: 10px;
+            color: #666;
+        }
+        .equation {
+            font-family: "Courier New", Courier, monospace;
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #d11a2a;
+        }
+        .overline {
+            text-decoration: overline;
+        }
+    </style>
+</head>
+<body>
+
+    <ol>
+        <!-- 1. Commutative Law -->
+        <li>Commutative Law
+            <dl>
+                <dd >Definition: Changing the order of the inputs in a logical operation produces the exact same output.</dd>
+                <dt>OR Law:</dt>
+                <dd><span class="equation">A + B = B + A</span></dd>
+                <dt>AND Law:</dt>
+                <dd><span class="equation">A &middot; B = B &middot; A</span></dd>
+            </dl>
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Commutative Law</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; padding: 10px; }
+        .box { border: 1px solid #ddd; border-radius: 6px; padding: 15px; max-width: 450px; width: 100%; }
+        h3 { margin-top: 0; color: #222; border-bottom: 2px solid #3498db; padding-bottom: 5px; }
+        .row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; background: #fafafa; padding: 5px; border-radius: 4px; }
+        .eq { font-family: monospace; font-weight: bold; color: #e74c3c; margin-bottom: 5px; font-size: 0.9em; }
+        svg { width: 140px; height: 60px; }
+        text { font-size: 14px; font-weight: bold; }
+        .side { font-size: 1.5em; color: #999; }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h3>Commutative Law Diagrams</h3>
+
+    <div class="eq">A + B = B + A</div>
+    <div class="row">
+        <!-- A + B -->
+        <svg viewBox="0 0 160 80">
+            <text x="5" y="30">A</text><text x="5" y="60">B</text>
+            <line x1="20" y1="25" x2="50" y2="25" stroke="#333" stroke-width="2"/>
+            <line x1="20" y1="55" x2="50" y2="55" stroke="#333" stroke-width="2"/>
+            <path d="M 45,10 C 55,10 65,18 70,22 C 85,32 105,40 120,40 C 105,40 85,48 70,58 C 65,62 55,70 45,70 C 58,48 58,32 45,10 Z" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+            <line x1="120" y1="40" x2="150" y2="40" stroke="#333" stroke-width="2"/>
+        </svg>
+        <div class="side">&equiv;</div>
+        <!-- B + A -->
+        <svg viewBox="0 0 160 80">
+            <text x="5" y="30">B</text><text x="5" y="60">A</text>
+            <line x1="20" y1="25" x2="50" y2="25" stroke="#333" stroke-width="2"/>
+            <line x1="20" y1="55" x2="50" y2="55" stroke="#333" stroke-width="2"/>
+            <path d="M 45,10 C 55,10 65,18 70,22 C 85,32 105,40 120,40 C 105,40 85,48 70,58 C 65,62 55,70 45,70 C 58,48 58,32 45,10 Z" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+            <line x1="120" y1="40" x2="150" y2="40" stroke="#333" stroke-width="2"/>
+        </svg>
+    </div>
+
+    <div class="eq">A &middot; B = B &middot; A</div>
+    <div class="row">
+        <!-- A · B -->
+        <svg viewBox="0 0 160 80">
+            <text x="5" y="30">A</text><text x="5" y="60">B</text>
+            <line x1="20" y1="25" x2="50" y2="25" stroke="#333" stroke-width="2"/>
+            <line x1="20" y1="55" x2="50" y2="55" stroke="#333" stroke-width="2"/>
+            <path d="M 50,10 L 75,10 A 30,30 0 0,1 75,70 L 50,70 Z" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
+            <line x1="105" y1="40" x2="140" y2="40" stroke="#333" stroke-width="2"/>
+        </svg>
+        <div class="side">&equiv;</div>
+        <!-- B · A -->
+        <svg viewBox="0 0 160 80">
+            <text x="5" y="30">B</text><text x="5" y="60">A</text>
+            <line x1="20" y1="25" x2="50" y2="25" stroke="#333" stroke-width="2"/>
+            <line x1="20" y1="55" x2="50" y2="55" stroke="#333" stroke-width="2"/>
+            <path d="M 50,10 L 75,10 A 30,30 0 0,1 75,70 L 50,70 Z" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
+            <line x1="105" y1="40" x2="140" y2="40" stroke="#333" stroke-width="2"/>
+        </svg>
+    </div>
+</div>
+
+</body>
+</html>
+
+        </li>
+
+        <!-- 2. Associative Law -->
+        <li>Associative Law
+            <dl>
+                <dd >Definition: The grouping of variables does not change the final output when performing repeated operations of the same type.</dd>
+                <dt>OR Law:</dt>
+                <dd><span class="equation">A + (B + C) = (A + B) + C</span></dd>
+                <dt>AND Law:</dt>
+                <dd><span class="equation">A &middot; (B &middot; C) = (A &middot; B) &middot; C</span></dd>
+            </dl>
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Associative Law</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; padding: 10px; }
+        .box { border: 1px solid #ddd; border-radius: 6px; padding: 15px; max-width: 450px; width: 100%; }
+        h3 { margin-top: 0; color: #222; border-bottom: 2px solid #3498db; padding-bottom: 5px; }
+        .row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; background: #fafafa; padding: 5px; border-radius: 4px; }
+        .eq { font-family: monospace; font-weight: bold; color: #e74c3c; margin-bottom: 5px; font-size: 0.9em; }
+        svg { width: 180px; height: 90px; }
+        text { font-size: 13px; font-weight: bold; }
+        .side { font-size: 1.5em; color: #999; }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h3>Associative Law Diagrams</h3>
+
+    <div class="eq">A + (B + C) = (A + B) + C</div>
+    <div class="row">
+        <!-- A + (B + C) -->
+        <svg viewBox="0 0 180 90">
+            <text x="5" y="20">A</text><text x="5" y="50">B</text><text x="5" y="80">C</text>
+            <line x1="20" y1="45" x2="45" y2="45" stroke="#333" stroke-width="1.5"/>
+            <line x1="20" y1="75" x2="45" y2="75" stroke="#333" stroke-width="1.5"/>
+            <path d="M 40,35 C 48,35 55,41 60,45 C 72,53 88,60 100,60 C 88,60 72,67 60,75 C 55,79 48,85 40,85 C 50,67 50,53 40,35 Z" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+            <line x1="100" y1="60" x2="115" y2="60" stroke="#333" stroke-width="1.5"/>
+            <line x1="20" y1="15" x2="115" y2="15" stroke="#333" stroke-width="1.5"/>
+            <path d="M 110,5 C 118,5 125,11 130,15 C 142,23 158,30 170,30 C 158,30 142,37 130,45 C 125,49 118,55 110,55 C 120,37 120,23 110,5 Z" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+        </svg>
+        <div class="side">&equiv;</div>
+        <!-- (A + B) + C -->
+        <svg viewBox="0 0 180 90">
+            <text x="5" y="20">A</text><text x="5" y="50">B</text><text x="5" y="80">C</text>
+            <line x1="20" y1="15" x2="45" y2="15" stroke="#333" stroke-width="1.5"/>
+            <line x1="20" y1="45" x2="45" y2="45" stroke="#333" stroke-width="1.5"/>
+            <path d="M 40,5 C 48,5 55,11 60,15 C 72,23 88,30 100,30 C 88,30 72,37 60,45 C 55,49 48,55 40,55 C 50,37 50,23 40,5 Z" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+            <line x1="100" y1="30" x2="115" y2="30" stroke="#333" stroke-width="1.5"/>
+            <line x1="20" y1="75" x2="115" y2="75" stroke="#333" stroke-width="1.5"/>
+            <path d="M 110,20 C 118,20 125,26 130,30 C 142,38 158,45 170,45 C 158,45 142,52 130,60 C 125,64 118,70 110,70 C 120,52 120,38 110,20 Z" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+        </svg>
+    </div>
+
+    <div class="eq">A &middot; (B &middot; C) = (A &middot; B) &middot; C</div>
+    <div class="row">
+        <!-- A · (B · C) -->
+        <svg viewBox="0 0 180 90">
+            <text x="5" y="20">A</text><text x="5" y="50">B</text><text x="5" y="80">C</text>
+            <line x1="20" y1="45" x2="45" y2="45" stroke="#333" stroke-width="1.5"/>
+            <line x1="20" y1="75" x2="45" y2="75" stroke="#333" stroke-width="1.5"/>
+            <path d="M 45,35 L 65,35 A 20,20 0 0,1 65,85 L 45,85 Z" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
+            <line x1="85" y1="60" x2="115" y2="60" stroke="#333" stroke-width="1.5"/>
+            <line x1="20" y1="15" x2="115" y2="15" stroke="#333" stroke-width="1.5"/>
+            <path d="M 115,10 L 135,10 A 20,20 0 0,1 135,60 L 115,60 Z" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
+        </svg>
+        <div class="side">&equiv;</div>
+        <!-- (A · B) · C -->
+        <svg viewBox="0 0 180 90">
+            <text x="5" y="20">A</text><text x="5" y="50">B</text><text x="5" y="80">C</text>
+            <line x1="20" y1="15" x2="45" y2="15" stroke="#333" stroke-width="1.5"/>
+            <line x1="20" y1="45" x2="45" y2="45" stroke="#333" stroke-width="1.5"/>
+            <path d="M 45,5 L 65,5 A 20,20 0 0,1 65,55 L 45,55 Z" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
+            <line x1="85" y1="30" x2="115" y2="30" stroke="#333" stroke-width="1.5"/>
+            <line x1="20" y1="75" x2="115" y2="75" stroke="#333" stroke-width="1.5"/>
+            <path d="M 115,25 L 135,25 A 20,20 0 0,1 135,75 L 115,75 Z" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
+        </svg>
+    </div>
+</div>
+
+</body>
+</html>
+
+        </li>
+
+        <!-- 3. Distributive Law -->
+        <li>Distributive Law
+            <dl>
+                <dd >Definition: An operation can be applied across a parenthetical group of variables, similar to multiplying across an addition in standard algebra.</dd>
+                <dt>AND over OR:</dt>
+                <dd><span class="equation">A(B + C) = AB + AC</span></dd>
+                <dt>OR over AND:</dt>
+                <dd><span class="equation">A + BC = (A + B)(A + C)</span></dd>
+            </dl>
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Distributive Law</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; padding: 10px; }
+        .box { border: 1px solid #ddd; border-radius: 6px; padding: 15px; max-width: 450px; width: 100%; }
+        h3 { margin-top: 0; color: #222; border-bottom: 2px solid #3498db; padding-bottom: 5px; }
+        .row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; background: #fafafa; padding: 5px; border-radius: 4px; }
+        .eq { font-family: monospace; font-weight: bold; color: #e74c3c; margin-bottom: 5px; font-size: 0.9em; }
+        svg { width: 180px; height: 95px; }
+        text { font-size: 13px; font-weight: bold; }
+        .side { font-size: 1.5em; color: #999; }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h3>Distributive Law Diagrams</h3>
+
+    <div class="eq">A(B + C) = AB + AC</div>
+    <div class="row">
+        <!-- A(B + C) -->
+        <svg viewBox="0 0 180 90">
+            <text x="5" y="20">A</text><text x="5" y="50">B</text><text x="5" y="80">C</text>
+            <line x1="20" y1="45" x2="45" y2="45" stroke="#333" stroke-width="1.5"/>
+            <line x1="20" y1="75" x2="45" y2="75" stroke="#333" stroke-width="1.5"/>
+            <path d="M 40,35 C 48,35 55,41 60,45 C 72,53 88,60 100,60 C 88,60 72,67 60,75 C 55,79 48,85 40,85 C 50,67 50,53 40,35 Z" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+            <line x1="100" y1="60" x2="115" y2="60" stroke="#333" stroke-width="1.5"/>
+            <line x1="20" y1="15" x2="115" y2="15" stroke="#333" stroke-width="1.5"/>
+            <path d="M 115,10 L 135,10 A 20,20 0 0,1 135,60 L 115,60 Z" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
+        </svg>
+        <div class="side">&equiv;</div>
+        <!-- AB + AC -->
+        <svg viewBox="0 0 180 90">
+            <text x="5" y="15">A</text><text x="5" y="35">B</text><text x="5" y="60">A</text><text x="5" y="80">C</text>
+            <line x1="20" y1="10" x2="45" y2="10" stroke="#333" stroke-width="1.5"/>
+            <line x1="20" y1="30" x2="45" y2="30" stroke="#333" stroke-width="1.5"/>
+            <path d="M 45,2 L 60,2 A 13,13 0 0,1 60,28 L 45,28 Z" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
+            <line x1="20" y1="55" x2="45" y2="55" stroke="#333" stroke-width="1.5"/>
+            <line x1="20" y1="75" x2="45" y2="75" stroke="#333" stroke-width="1.5"/>
+            <path d="M 45,47 L 60,47 A 13,13 0 0,1 60,73 L 45,73 Z" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
+            <line x1="73" y1="15" x2="115" y2="15" stroke="#333" stroke-width="1.5"/>
+            <line x1="73" y1="60" x2="115" y2="60" stroke="#333" stroke-width="1.5"/>
+            <path d="M 110,5 C 118,5 125,11 130,15 C 142,23 158,30 170,30 C 158,30 142,37 130,45 C 125,49 118,55 110,55 C 120,37 120,23 110,5 Z" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+        </svg>
+    </div>
+
+    <div class="eq">A + BC = (A + B)(A + C)</div>
+    <div class="row">
+        <!-- A + BC -->
+        <svg viewBox="0 0 180 90">
+            <text x="5" y="20">A</text><text x="5" y="50">B</text><text x="5" y="80">C</text>
+            <line x1="20" y1="45" x2="45" y2="45" stroke="#333" stroke-width="1.5"/>
+            <line x1="20" y1="75" x2="45" y2="75" stroke="#333" stroke-width="1.5"/>
+            <path d="M 45,35 L 65,35 A 20,20 0 0,1 65,85 L 45,85 Z" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
+            <line x1="85" y1="60" x2="115" y2="60" stroke="#333" stroke-width="1.5"/>
+            <line x1="20" y1="15" x2="115" y2="15" stroke="#333" stroke-width="1.5"/>
+            <path d="M 110,5 C 118,5 125,11 130,15 C 142,23 158,30 170,30 C 158,30 142,37 130,45 C 125,49 118,55 110,55 C 120,37 120,23 110,5 Z" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+        </svg>
+        <div class="side">&equiv;</div>
+        <!-- (A + B)(A + C) -->
+        <svg viewBox="0 0 180 90">
+            <text x="5" y="15">A</text><text x="5" y="35">B</text><text x="5" y="60">A</text><text x="5" y="80">C</text>
+            <line x1="20" y1="10" x2="45" y2="10" stroke="#333" stroke-width="1.5"/>
+            <line x1="20" y1="30" x2="45" y2="30" stroke="#333" stroke-width="1.5"/>
+            <path d="M 40,2 C 46,2 52,6 55,10 C 63,16 73,20 80,20 C 73,20 63,24 55,30 C 52,34 46,38 40,38 C 47,24 47,14 40,2 Z" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+            <line x1="20" y1="55" x2="45" y2="55" stroke="#333" stroke-width="1.5"/>
+            <line x1="20" y1="75" x2="45" y2="75" stroke="#333" stroke-width="1.5"/>
+            <path d="M 40,47 C 46,47 52,51 55,55 C 63,61 73,65 80,65 C 73,65 63,69 55,75 C 52,79 46,83 40,83 C 47,69 47,59 40,47 Z" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+            <line x1="80" y1="20" x2="115" y2="20" stroke="#333" stroke-width="1.5"/>
+            <line x1="80" y1="65" x2="115" y2="65" stroke="#333" stroke-width="1.5"/>
+            <path d="M 115,15 L 135,15 A 20,20 0 0,1 135,65 L 115,65 Z" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
+        </svg>
+    </div>
+</div>
+
+</body>
+</html>
+
+        </li>
+
+        <!-- 4. De Morgan's Laws -->
+        <li>De Morgan's Laws
+            <dl>
+                <dd>Definition: The complement of a grouped logical expression is found by breaking the inversion bar over each individual variable and flipping the operator sign underneath.</dd>
+                <dt>First Law:</dt>
+                <dd><span class="equation"><span class="overline">A + B</span> = <span class="overline">A</span> &middot; <span class="overline">B</span></span> (The complement of a sum equals the product of the complements)</dd>
+                <dt>Second Law:</dt>
+                <dd><span class="equation"><span class="overline">A &middot; B</span> = <span class="overline">A</span> + <span class="overline">B</span></span> (The complement of a product equals the sum of the complements)</dd>
+            </dl>
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>De Morgan's Laws</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; padding: 10px; }
+        .box { border: 1px solid #ddd; border-radius: 6px; padding: 15px; max-width: 450px; width: 100%; }
+        h3 { margin-top: 0; color: #222; border-bottom: 2px solid #3498db; padding-bottom: 5px; }
+        .row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; background: #fafafa; padding: 5px; border-radius: 4px; }
+        .eq { font-family: monospace; font-weight: bold; color: #e74c3c; margin-bottom: 5px; font-size: 0.9em; }
+        .overline { text-decoration: overline; }
+        svg { width: 180px; height: 70px; }
+        text { font-size: 13px; font-weight: bold; }
+        .side { font-size: 1.5em; color: #999; }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h3>De Morgan's Laws Diagrams</h3>
+
+    <!-- Theorem 1 -->
+    <div class="eq"><span class="overline">A + B</span> = <span class="overline">A</span> &middot; <span class="overline">B</span></div>
+    <div class="row">
+        <!-- NOR Gate -->
+        <svg viewBox="0 0 160 70">
+            <text x="5" y="25">A</text><text x="5" y="55">B</text>
+            <line x1="20" y1="20" x2="45" y2="20" stroke="#333" stroke-width="1.5"/>
+            <line x1="20" y1="50" x2="45" y2="50" stroke="#333" stroke-width="1.5"/>
+            <!-- OR shape -->
+            <path d="M 40,5 C 48,5 55,13 60,17 C 75,27 95,35 110,35 C 95,35 75,43 60,53 C 55,57 48,65 40,65 C 53,43 53,27 40,5 Z" fill="#e74c3c" stroke="#c0392b" stroke-width="1.5"/>
+            <!-- Inversion bubble -->
+            <circle cx="114" cy="35" r="4" fill="#fff" stroke="#c0392b" stroke-width="1.5"/>
+            <line x1="118" y1="35" x2="145" y2="35" stroke="#333" stroke-width="1.5"/>
+        </svg>
+        <div class="side">&equiv;</div>
+        <!-- Bubbled AND Gate -->
+        <svg viewBox="0 0 160 70">
+            <text x="5" y="25">A</text><text x="5" y="55">B</text>
+            <line x1="20" y1="20" x2="40" y2="20" stroke="#333" stroke-width="1.5"/>
+            <line x1="20" y1="50" x2="40" y2="50" stroke="#333" stroke-width="1.5"/>
+            <!-- Bubbles on input -->
+            <circle cx="44" cy="20" r="3" fill="#fff" stroke="#27ae60" stroke-width="1.5"/>
+            <circle cx="44" cy="50" r="3" fill="#fff" stroke="#27ae60" stroke-width="1.5"/>
+            <!-- AND Shape -->
+            <path d="M 48,10 L 70,10 A 25,25 0 0,1 70,60 L 48,60 Z" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
+            <line x1="95" y1="35" x2="145" y2="35" stroke="#333" stroke-width="1.5"/>
+        </svg>
+    </div>
+
+    <!-- Theorem 2 -->
+    <div class="eq"><span class="overline">A &middot; B</span> = <span class="overline">A</span> + <span class="overline">B</span></div>
+    <div class="row">
+        <!-- NAND Gate -->
+        <svg viewBox="0 0 160 70">
+            <text x="5" y="25">A</text><text x="5" y="55">B</text>
+            <line x1="20" y1="20" x2="45" y2="20" stroke="#333" stroke-width="1.5"/>
+            <line x1="20" y1="50" x2="45" y2="50" stroke="#333" stroke-width="1.5"/>
+            <!-- AND shape -->
+            <path d="M 45,10 L 70,10 A 25,25 0 0,1 70,60 L 45,60 Z" fill="#f39c12" stroke="#d35400" stroke-width="1.5"/>
+            <!-- Inversion bubble -->
+            <circle cx="99" cy="35" r="4" fill="#fff" stroke="#d35400" stroke-width="1.5"/>
+            <line x1="103" y1="35" x2="145" y2="35" stroke="#333" stroke-width="1.5"/>
+        </svg>
+        <div class="side">&equiv;</div>
+        <!-- Bubbled OR Gate -->
+        <svg viewBox="0 0 160 70">
+            <text x="5" y="25">A</text><text x="5" y="55">B</text>
+            <line x1="20" y1="20" x2="40" y2="20" stroke="#333" stroke-width="1.5"/>
+            <line x1="20" y1="50" x2="40" y2="50" stroke="#333" stroke-width="1.5"/>
+            <!-- Bubbles on input -->
+            <circle cx="44" cy="20" r="3" fill="#fff" stroke="#2980b9" stroke-width="1.5"/>
+            <circle cx="44" cy="50" r="3" fill="#fff" stroke="#2980b9" stroke-width="1.5"/>
+            <!-- OR Shape -->
+            <path d="M 48,5 C 56,5 63,13 68,17 C 83,27 103,35 118,35 C 103,35 83,43 68,53 C 63,57 56,65 48,65 C 61,43 61,27 48,5 Z" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+            <line x1="118" y1="35" x2="145" y2="35" stroke="#333" stroke-width="1.5"/>
+        </svg>
+    </div>
+</div>
+
+</body>
+</html>
+
+        </li>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOP vs POS Comparison Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        .table-container {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            max-width: 800px;
+            width: 100%;
+        }
+        h3 {
+            margin-top: 0;
+            color: #2c3e50;
+            border-bottom: 2px solid #34495e;
+            padding-bottom: 8px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: #f4f6f7;
+            color: #34495e;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .sno-col {
+            text-align: center;
+            font-weight: bold;
+            color: #7f8c8d;
+            width: 40px;
+        }
+        .sop-header {
+            border-bottom: 3px solid #2ecc71;
+        }
+        .pos-header {
+            border-bottom: 3px solid #3498db;
+        }
+    </style>
+</head>
+<body>
+
+<div class="table-container">
+    <h3>Comparison: SOP vs POS Methods</h3>
+    <table>
+        <thead>
+            <tr>
+                <th class="sno-col">S.No.</th>
+                <th class="sop-header">SOP (Sum of Products)</th>
+                <th class="pos-header">POS (Product of Sums)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="sno-col">1.</td>
+                <td>A way of representing Boolean expressions as sum of product terms.</td>
+                <td>A way of representing Boolean expressions as product of sum terms.</td>
+            </tr>
+            <tr>
+                <td class="sno-col">2.</td>
+                <td>SOP uses minterms. Minterm is product of Boolean variables either in normal form or complemented form.</td>
+                <td>POS uses maxterms. Maxterm is sum of Boolean variables either in normal form or complemented form.</td>
+            </tr>
+            <tr>
+                <td class="sno-col">3.</td>
+                <td>It is sum of minterms. Minterms are represented as 'm'</td>
+                <td>It is product of maxterms. Maxterms are represented as 'M'</td>
+            </tr>
+            <tr>
+                <td class="sno-col">4.</td>
+                <td>SOP is formed by considering all the minterms, whose output is HIGH(1)</td>
+                <td>POS is formed by considering all the maxterms, whose output is LOW(0)</td>
+            </tr>
+            <tr>
+                <td class="sno-col">5.</td>
+                <td>While writing minterms for SOP, input with value 1 is considered as the variable itself and input with value 0 is considered as complement of the input.</td>
+                <td>While writing maxterms for POS, input with value 1 is considered as the complement and input with value 0 is considered as the variable itself.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOP and POS Pipeline Dashboard</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; padding: 10px; background-color: #fafafa; }
+        .dashboard { border: 1px solid #ddd; border-radius: 8px; padding: 15px; max-width: 800px; width: 100%; background: #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.06); }
+        h2 { margin-top: 0; color: #2c3e50; border-bottom: 2px solid #34495e; padding-bottom: 5px; text-align: center; font-size: 1.4em; }
+        .grid-split { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px; }
+        @media (max-width: 600px) { .grid-split { grid-template-columns: 1fr; } }
+        .card { border: 1px solid #eee; border-radius: 6px; padding: 12px; background: #fff; }
+        .sop-card { border-top: 4px solid #2ecc71; }
+        .pos-card { border-top: 4px solid #3498db; }
+        .title { font-weight: bold; color: #2c3e50; font-size: 1.05em; margin-bottom: 2px; }
+        .eq { font-family: monospace; font-weight: bold; color: #e74c3c; margin-bottom: 10px; font-size: 0.85em; background: #f9f9f9; padding: 4px; border-radius: 3px; display: inline-block; width: calc(100% - 8px); box-sizing: border-box; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.8em; text-align: center; margin-bottom: 15px; }
+        th, td { border: 1px solid #ddd; padding: 5px; }
+        th { background-color: #f5f5f5; color: #333; }
+        .sop-active { background-color: #e8f8f5; font-weight: bold; color: #27ae60; }
+        .pos-active { background-color: #ebf5fb; font-weight: bold; color: #2980b9; }
+        svg { width: 100%; height: auto; max-height: 140px; display: block; margin: 0 auto; background: #fff; border: 1px solid #f0f0f0; border-radius: 4px; }
+        text { font-size: 11px; font-weight: bold; fill: #333; }
+    </style>
+</head>
+<body>
+
+<div class="dashboard">
+    <h2>Canonical SOP & POS Implementations</h2>
+
+    <div class="grid-split">
+        <!-- SOP Section -->
+        <div class="card sop-card">
+            <div class="title">Sum-of-Products (SOP)</div>
+            <div class="eq">F = &Sigma; m(1, 2) = A&bull;B̅ + A̅&bull;B</div>
+            
+            <table>
+                <thead>
+                    <tr><th>A</th><th>B</th><th>Out (F)</th><th>Minterm</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>0</td><td>0</td><td>0</td><td>A̅&bull;B̅</td></tr>
+                    <tr class="sop-active"><td>0</td><td>1</td><td>1</td><td>A̅&bull;B (m1)</td></tr>
+                    <tr class="sop-active"><td>1</td><td>0</td><td>1</td><td>A&bull;B̅ (m2)</td></tr>
+                    <tr><td>1</td><td>1</td><td>0</td><td>A&bull;B</td></tr>
+                </tbody>
+            </table>
+
+            <!-- SOP SVG Logic Diagram -->
+            <svg viewBox="0 0 240 120">
+                <!-- Inputs Left -->
+                <text x="5" y="25">A</text><text x="5" y="50">B</text>
+                
+                <!-- Rail 1 Gates: A̅B -->
+                <line x1="20" y1="20" x2="40" y2="20" stroke="#333" stroke-width="1.5"/>
+                <circle cx="43" cy="20" r="2.5" fill="#fff" stroke="#27ae60" stroke-width="1.5"/>
+                <line x1="46" y1="20" x2="70" y2="20" stroke="#333" stroke-width="1.5"/>
+                <line x1="20" y1="45" x2="70" y2="45" stroke="#333" stroke-width="1.5"/>
+                
+                <!-- Rail 2 Gates: AB̅ -->
+                <line x1="20" y1="25" x2="70" y2="80" stroke="#333" stroke-width="1.5"/>
+                <line x1="20" y1="50" x2="40" y2="105" stroke="#333" stroke-width="1.5"/>
+                <circle cx="43" cy="105" r="2.5" fill="#fff" stroke="#27ae60" stroke-width="1.5"/>
+                <line x1="46" y1="105" x2="70" y2="105" stroke="#333" stroke-width="1.5"/>
+
+                <!-- Product AND Gates -->
+                <path d="M 70,10 L 90,10 A 20,20 0 0,1 90,55 L 70,55 Z" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
+                <path d="M 70,70 L 90,70 A 20,20 0 0,1 90,115 L 70,115 Z" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
+
+                <!-- Intermediate lines -->
+                <line x1="110" y1="32" x2="160" y2="32" stroke="#333" stroke-width="1.5"/>
+                <line x1="110" y1="92" x2="160" y2="92" stroke="#333" stroke-width="1.5"/>
+
+                <!-- Final Sum OR Gate -->
+                <path d="M 155,20 C 163,20 170,27 175,32 C 187,42 205,50 220,50 C 205,50 187,58 175,68 C 170,73 163,80 155,80 C 166,58 166,42 155,20 Z" transform="translate(5, 12)" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+                <text x="230" y="65">F</text>
+            </svg>
+        </div>
+
+        <!-- POS Section -->
+        <div class="card pos-card">
+            <div class="title">Product-of-Sums (POS)</div>
+            <div class="eq">F = &Pi; M(0, 3) = (A + B)&bull;(A̅ + B̅)</div>
+            
+            <table>
+                <thead>
+                    <tr><th>A</th><th>B</th><th>Out (F)</th><th>Maxterm</th></tr>
+                </thead>
+                <tbody>
+                    <tr class="pos-active"><td>0</td><td>0</td><td>0</td><td>A + B (M0)</td></tr>
+                    <tr><td>0</td><td>1</td><td>1</td><td>A + B̅</td></tr>
+                    <tr><td>1</td><td>0</td><td>1</td><td>A̅ + B</td></tr>
+                    <tr class="pos-active"><td>1</td><td>1</td><td>0</td><td>A̅ + B̅ (M3)</td></tr>
+                </tbody>
+            </table>
+
+            <!-- POS SVG Logic Diagram -->
+            <svg viewBox="0 0 240 120">
+                <!-- Inputs Left -->
+                <text x="5" y="25">A</text><text x="5" y="50">B</text>
+                
+                <!-- Rail 1 Gates: (A + B) -->
+                <line x1="20" y1="20" x2="65" y2="20" stroke="#333" stroke-width="1.5"/>
+                <line x1="20" y1="45" x2="65" y2="45" stroke="#333" stroke-width="1.5"/>
+                
+                <!-- Rail 2 Gates: (A̅ + B̅) -->
+                <line x1="20" y1="25" x2="40" y2="80" stroke="#333" stroke-width="1.5"/>
+                <circle cx="43" cy="80" r="2.5" fill="#fff" stroke="#2980b9" stroke-width="1.5"/>
+                <line x1="46" y1="80" x2="65" y2="80" stroke="#333" stroke-width="1.5"/>
+                
+                <line x1="20" y1="50" x2="40" y2="105" stroke="#333" stroke-width="1.5"/>
+                <circle cx="43" cy="105" r="2.5" fill="#fff" stroke="#2980b9" stroke-width="1.5"/>
+                <line x1="46" y1="105" x2="65" y2="105" stroke="#333" stroke-width="1.5"/>
+
+                <!-- Sum OR Gates -->
+                <path d="M 65,10 C 73,10 80,17 85,22 C 97,32 115,40 130,40 C 115,40 97,48 85,58 C 80,62 73,70 65,70 C 76,48 76,32 65,10 Z" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+                <path d="M 65,70 C 73,70 80,77 85,82 C 97,92 115,100 130,100 C 115,100 97,108 85,118 C 80,122 73,130 65,130 C 76,108 76,92 65,70 Z" transform="translate(0, -2)" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+
+                <!-- Intermediate lines -->
+                <line x1="130" y1="40" x2="170" y2="40" stroke="#333" stroke-width="1.5"/>
+                <line x1="130" y1="98" x2="170" y2="98" stroke="#333" stroke-width="1.5"/>
+
+                <!-- Final Product AND Gate -->
+                <path d="M 170,25 L 195,25 A 30,30 0 0,1 195,115 L 170,115 Z" transform="translate(0, -5)" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
+                <text x="230" y="65">F</text>
+            </svg>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Binary Representations Specification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 0 15px;
+            background-color: #fff;
+        }
+        h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #34495e;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        p {
+            font-size: 0.9em;
+            margin: 10px 0;
+        }
+        
+        /* Responsive Block Diagram Configuration */
+        .diagram-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        @media (max-width: 500px) {
+            .diagram-container { grid-template-columns: 1fr; }
+        }
+        .diagram-box {
+            background-color: #fafafa;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .diagram-box h4 {
+            margin: 0 0 8px 0;
+            color: #2980b9;
+            font-size: 0.95em;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 4px;
+        }
+        .diagram-box ul {
+            margin: 0;
+            padding: 0 0 0 15px;
+            text-align: left;
+            font-size: 0.8em;
+            color: #555;
+        }
+        .diagram-box li {
+            margin-bottom: 4px;
+        }
+
+        /* Method Item Detail Layouts */
+        .method-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .method-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #eee;
+        }
+        .method-name {
+            font-size: 1.05em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 4px;
+        }
+        .rule-list {
+            margin: 6px 0;
+            padding-left: 20px;
+            font-size: 0.88em;
+        }
+        .example-box {
+            font-family: "Courier New", Courier, monospace;
+            background-color: #f8f9fa;
+            border-left: 3px solid #e74c3c;
+            padding: 6px 12px;
+            margin-top: 6px;
+            font-size: 0.85em;
+            font-weight: bold;
+            color: #333;
+            border-radius: 0 4px 4px 0;
+        }
+        .highlight {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>1. Binary Representations</h3>
+    <p>Binary representations dictate how positive, negative, and fractional values are stored in binary memory fields.</p>
+
+    
+    <!-- Detailed Method Breakdown -->
+    <ul class="method-list">
+        
+        <!-- Unsigned Representation -->
+        <li class="method-item">
+            <div class="method-name">Unsigned Representation</div>
+            <p>All bits represent positional magnitude weights (e.g., 2<sup>n</sup>, ..., 2<sup>2</sup>, 2<sup>1</sup>, 2<sup>0</sup>). It cannot represent numbers less than zero.</p>
+        </li>
+
+        <!-- Sign-Magnitude -->
+        <li class="method-item">
+            <div class="method-name">Sign-Magnitude (SM)</div>
+            <p>The Most Significant Bit (MSB) acts as the sign flag. The remaining bits determine absolute value.</p>
+            <ul class="rule-list">
+                <li><strong>Sign Bit:</strong> 0 = Positive (+), 1 = Negative (-)</li>
+            </ul>
+            <div class="example-box">
+                Example (+5 vs -5 in 4 bits):<br>
+                +5 &rarr; <span class="highlight">0</span>101 | -5 &rarr; <span class="highlight">1</span>101
+            </div>
+        </li>
+
+        <!-- 1's Complement -->
+        <li class="method-item">
+            <div class="method-name">1's Complement</div>
+            <p>Formed by flipping every bit of the positive number (1 becomes 0, and 0 becomes 1).</p>
+            <div class="example-box">
+                Example (-5 in 4 bits):<br>
+                +5 = 0101 &rarr; -5 = <span class="highlight">1010</span>
+            </div>
+        </li>
+
+        <!-- 2's Complement -->
+        <li class="method-item">
+            <div class="method-name">2's Complement</div>
+            <p>The standard system for modern processors. Formed by adding 1 to the 1's complement representation. It provides a single representation for zero and simplifies hardware subtraction.</p>
+            <div class="example-box">
+                Example (-5 in 4 bits):<br>
+                +5 = 0101 &rarr; 1's Comp = 1010 &rarr; Add 1 &rarr; -5 = <span class="highlight">1011</span>
+            </div>
+        </li>
+
+    </ul>
+
+</body>
+</html>
+
+    </ol>
+</body>
+</html>
+
