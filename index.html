@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://cloudflare.com">
     
     <style>
-        /* Design Tokens (CSS Variables) */
         :root {
             --bg-body: #f8fafc;
             --bg-surface: #ffffff;
@@ -31,14 +30,11 @@
             --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.05);
             --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
-        /* Core Reset & Base Styles */
         *, *::before, *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg-body);
@@ -46,9 +42,7 @@
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
-
-        /* Pro Sticky Navbar with Glassmorphism */
-        .navbar {
+  .navbar {
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -62,7 +56,6 @@
             height: 72px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-
         .nav-brand {
             display: flex;
             align-items: center;
@@ -73,24 +66,20 @@
             text-decoration: none;
             letter-spacing: -0.5px;
         }
-
         .nav-brand i {
             color: var(--brand-primary);
         }
-
         .nav-menu {
             display: flex;
             list-style: none;
             height: 100%;
         }
-
         .nav-item {
             display: flex;
             align-items: center;
             height: 100%;
             position: relative;
         }
-
         .nav-link, .dropbtn {
             font-family: inherit;
             font-size: 0.95rem;
@@ -107,13 +96,10 @@
             height: 100%;
             transition: var(--transition-smooth);
         }
-
         .nav-link:hover, .dropdown:hover .dropbtn, .nav-item.active .nav-link {
             color: var(--text-inverse);
         }
-
-        /* Pro Dropdowns Layout */
-        .dropdown-panel {
+.dropdown-panel {
             position: absolute;
             top: 100%;
             left: 50%;
@@ -130,7 +116,6 @@
             transition: var(--transition-smooth);
             padding: 0.5rem 0;
         }
-
         .dropdown-panel a {
             color: var(--text-muted);
             padding: 0.75rem 1.5rem;
@@ -142,41 +127,23 @@
             font-weight: 500;
             transition: var(--transition-smooth);
         }
-
         .dropdown-panel a:hover {
             background-color: var(--brand-light);
             color: var(--brand-primary);
         }
-
         .dropdown:hover .dropdown-panel {
             opacity: 1;
             visibility: visible;
             pointer-events: auto;
             transform: translateX(-50%) translateY(0);
         }
-
         .dropbtn i {
             font-size: 0.75rem;
             transition: var(--transition-smooth);
         }
-
         .dropdown:hover .dropbtn i {
             transform: rotate(180deg);
         }
-
-        /* Responsive Mobile Architecture Menu Toggle */
-        #menu-toggle {
-            display: none;
-        }
-
-        .menu-trigger {
-            display: none;
-            color: var(--text-inverse);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Main Structural Layout Layout */
         .app-container {
             max-width: 1100px;
             margin: 3rem auto;
@@ -186,7 +153,6 @@
             gap: 4rem;
             align-items: center;
         }
-
         .hero-content h1 {
             font-size: 3rem;
             font-weight: 800;
@@ -195,20 +161,16 @@
             letter-spacing: -1px;
             margin-bottom: 1rem;
         }
-
         .hero-content h1 span {
             color: var(--brand-primary);
             position: relative;
         }
-
         .hero-subtitle {
             font-size: 1.1rem;
             color: var(--text-muted);
             margin-bottom: 2rem;
             max-width: 500px;
         }
-
-        /* Card Component Layout Upgrade */
         .media-wrapper {
             position: relative;
             border-radius: var(--radius-lg);
@@ -218,13 +180,11 @@
             border: 1px solid var(--border-color);
             transition: var(--transition-smooth);
         }
-
         .media-wrapper:hover {
             transform: translateY(-6px);
             box-shadow: var(--shadow-lg);
             border-color: rgba(59, 130, 246, 0.3);
         }
-
         .pro-card {
             width: 100%;
             height: auto;
@@ -233,8 +193,6 @@
             border-radius: var(--radius-md);
             display: block;
         }
-
-        /* Course Presentation & Call to Action (CTA) */
         .course-section {
             background-color: var(--bg-surface);
             border-radius: var(--radius-lg);
@@ -242,8 +200,7 @@
             border: 1px solid var(--border-color);
             box-shadow: var(--shadow-sm);
         }
-
-        .university-badge {
+      .university-badge {
             display: inline-flex;
             align-items: center;
             background-color: var(--brand-light);
@@ -256,7 +213,6 @@
             text-transform: uppercase;
             margin-bottom: 1rem;
         }
-
         .course-title {
             font-size: 1.75rem;
             font-weight: 700;
@@ -264,11 +220,9 @@
             letter-spacing: -0.5px;
             margin-bottom: 1.5rem;
         }
-
-        .action-box {
+   .action-box {
             margin-top: 1rem;
         }
-
         .view-btn {
             display: inline-flex;
             align-items: center;
@@ -283,22 +237,17 @@
             transition: var(--transition-smooth);
             box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
         }
-
         .view-btn:hover {
             background-color: var(--brand-hover);
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
         }
-
         .view-btn i {
             transition: var(--transition-smooth);
         }
-
         .view-btn:hover i {
             transform: translateX(4px);
         }
-
-        /* Adaptive Mobile Breakpoints Layout */
         @media screen and (max-width: 992px) {
             .app-container {
                 grid-template-columns: 1fr;
@@ -309,95 +258,7 @@
                 font-size: 2.5rem;
             }
         }
-
-        @media screen and (max-width: 768px) 
-        {
-            .menu-trigger {
-                display: block;
-            }
-
-            .nav-menu {
-                position: fixed;
-                top: 72px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 72px);
-                background-color: var(--bg-navbar);
-                flex-direction: column;
-                padding: 1.5rem 0;
-                transition: var(--transition-smooth);
-                overflow-y: auto;
-            }
-
-            #menu-toggle:checked ~ .nav-menu {
-                left: 0;
-            }
-
-            .nav-item {
-                flex-direction: column;
-                align-items: flex-start;
-                width: 100%;
-height: auto;
-}
-        }
-@media screen and (max-width: 768px) {
-    /* Mobile text and interactive elements alignment */
-    .nav-link, .dropbtn {
-        padding: 1rem 2rem;
-        width: 100%;
-        justify-content: space-between;
-        box-sizing: border-box;
-    }
-
-    /* Collapsed mobile panel state */
-    .dropdown-panel {
-        position: relative;
-        top: 0;
-        left: 0;
-        transform: none;
-        width: 100%;
-        background-color: rgba(255, 255, 255, 0.03);
-        box-shadow: none;
-        border: none;
-        border-radius: 0;
-        max-height: 0;
-        padding: 0;
-        display: block;
-        visibility: visible;
-        pointer-events: auto;
-        overflow: hidden; /* Added to cleanly clip child text when closed */
-        transition: max-height 0.3s ease;
-    }
-
-    /* Mobile trigger state when user activates hover/focus */
-    .dropdown:hover .dropdown-panel {
-        transform: none;
-        max-height: 500px;
-    }
-
-    /* Sub-navigation nested item typography styling */
-    .dropdown-panel a {
-        color: #94a3b8;
-        padding: 0.85rem 3rem;
-    }
-
-    .dropdown-panel a:hover {
-        background: none;
-        color: var(--text-inverse);
-    }
-}
-
-
-/* Container that splits your text on the left and logo on the right */
-.app-container {
-    max-width: 1100px;
-    margin: 3rem auto;
-    padding: 0 1.5rem;
-    display: grid;
-    grid-template-columns: 1.2fr 1fr; /* Splitting the layout columns */
-    gap: 4rem;
-    align-items: center;
-}
+        
 
 /* The card container wrapping your logo image */
 .media-wrapper {
